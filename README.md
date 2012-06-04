@@ -1,7 +1,7 @@
-Best Practices for iOS Software Design
-======================================
+Best Practices for High-Level iOS Software Design
+=================================================
 
-This article's goal is to help you write more stable code for your iOS applications. I highly encourage you to
+This article's goal is to help you write stable code for your iOS applications. I highly encourage you to
 contribute your own best practices via Github's
 [pull requests](https://github.com/jverkoey/iOS-Best-Practices/pull/new/master).
 
