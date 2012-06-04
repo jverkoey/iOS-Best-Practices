@@ -9,6 +9,13 @@ contribute your own best practices via Github's
 
 Originally written by: Jeff Verkoeyen (@featherless)
 
+Table of Contents
+=================
+
+- [Be Mindful of the Lifetime of Views](#be-mindful-of-the-lifetime-of-views)
+  * [Do not access self.view in init- methods](#rule-do-not-access-selfview-in-init--methods)
+  * [Use data source protocols to strongly separate data from views](##rule-use-data-source-protocols-to-strongly-separate-data-from-views)
+
 Be Mindful of the Lifetime of Views
 -----------------------------------
 
