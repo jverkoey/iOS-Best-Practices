@@ -60,3 +60,21 @@ This design will lead to inevitable abuse when developers attempt to use the tab
 their data. When the table view is inevitably released due to a memory warning the data will also be lost! This
 means that we need to store the data elsewhere anyway in order to guarantee its lifetime across multiple instances
 of the table view.
+
+UIViewController
+----------------
+
+> View controllers are the binding between your models and your views.
+
+### Rule: Use the existing navigation item object
+
+Every instance of a UIViewController has a `navigationItem` property which should be used to specify the left and
+right navigation buttons and the title view. You should *not* create a `UINavigationItem` object because the
+base UIViewController implementation will automatically create one when you access `self.navigationItem`. Simply
+access `self.navigationItem` and set its properties accordingly.
+
+```obj-c
+// UIViewController will automatically create the navigationItem object.
+self.navigationItem.rightBarButtonItem = doneButton;
+```
+
