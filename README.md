@@ -80,3 +80,23 @@ access `self.navigationItem` and set its properties accordingly.
 self.navigationItem.rightBarButtonItem = doneButton;
 ```
 
+Debugging
+---------
+
+### Rule: Use lldb for debugging
+
+lldb allows you to inspect properties on classes that don't have explicit ivars declared in the object's interface.
+
+To use lldb, select "Edit Scheme..." from the "Product" menu (or press Cmd+Shift+<). Select the "Run" tab
+on the left-hand side of the scheme editor. Change the debugger drop down to "LLDB".
+
+### Rule: Use NSZombieEnabled to find object leaks
+
+When NSZombieEnabled is enabled, objects that are released from memory will be kept around as "zombies". If you attempt
+to access the released object again in the future, rather than crashing with very little context, you will be shown
+the name of the object that was being accessed. This can be incredibly helpful in determining where memory leaks are
+occurring.
+
+To turn on NSZombieEnabled, select "Edit Scheme..." from the "Product" menu (or press Cmd+Shift+<). Select the "Run" tab
+on the left-hand side of the scheme editor. Select the "Arguments" tab in that page. Add a new Environment Variable
+and call it `NSZombieEnabled`. Set its value to `YES`.
