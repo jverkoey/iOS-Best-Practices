@@ -17,6 +17,8 @@ Table of Contents
   * [Use data source protocols to strongly separate data from views](#use-data-source-protocols-to-strongly-separate-data-from-views)
 - [UIViewController](#uiviewcontroller)
   * [Use the existing navigation item object](#use-the-existing-navigation-item-object)
+- [NSObject](#nsobject)
+  * [Only expose public properties and methods in headers](#only-expose-public-properties-and-methods-in-headers)
 - [Debugging](#debugging)
   * [Use lldb for debugging](#use-lldb-for-debugging)
   * [Use NSZombieEnabled to find object leaks](#use-nszombieenabled-to-find-object-leaks)
@@ -112,6 +114,8 @@ is being refactored in a fairly large project.
 
 @interface ViewController()
 @property (nonatomic, readwrite, assign) NSInteger objectId;
+// Notice that this property doesn't need to be in the .h. Objective-C will create this
+// property on the fly!
 @property (nonatomic, readwrite, retain) UILabel* objectLabel;
 @end
 
