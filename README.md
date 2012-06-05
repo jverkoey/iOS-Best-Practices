@@ -13,20 +13,20 @@ Table of Contents
 =================
 
 - [Be Mindful of the Lifetime of Views](#be-mindful-of-the-lifetime-of-views)
-  * [Do not access self.view in init- methods](#rule-do-not-access-selfview-in-init--methods)
-  * [Use data source protocols to strongly separate data from views](#rule-use-data-source-protocols-to-strongly-separate-data-from-views)
+  * [Do not access self.view in init- methods](#do-not-access-selfview-in-init--methods)
+  * [Use data source protocols to strongly separate data from views](#use-data-source-protocols-to-strongly-separate-data-from-views)
 - [UIViewController](#uiviewcontroller)
-  * [Use the existing navigation item object](#rule-use-the-existing-navigation-item-object)
+  * [Use the existing navigation item object](#use-the-existing-navigation-item-object)
 - [Debugging](#debugging)
-  * [Use lldb for debugging](#rule-use-lldb-for-debugging)
-  * [Use NSZombieEnabled to find object leaks](#rule-use-nszombieenabled-to-find-object-leaks)
+  * [Use lldb for debugging](#use-lldb-for-debugging)
+  * [Use NSZombieEnabled to find object leaks](#use-nszombieenabled-to-find-object-leaks)
 
 Be Mindful of the Lifetime of Views
 -----------------------------------
 
 > Remind yourself constantly that, at any time, your views may be destroyed.
 
-### Rule: Do not access self.view in init- methods
+### Do not access self.view in init- methods
 
 You should **never** access `self.view` in your controller's initialization methods. Doing so almost always leads to
 hard to debug bugs because that initialization logic will not be executed again after a memory warning.
@@ -46,7 +46,7 @@ Imagine this controller is the root of a navigation stack and a memory warning o
 controller, the view will no longer have `underPageBackgroundColor` as its background color. This leads to
 debugging frustration, even for experienced iOS engineers.
 
-### Rule: Use data source protocols to strongly separate data from views
+### Use data source protocols to strongly separate data from views
 
 When designing views that interact with data sets, always fetch the data via a data source protocol rather than
 exposing setters. Views are not data containers and should not be designed to enable any such abuse. Rather,
@@ -71,7 +71,7 @@ UIViewController
 
 > View controllers are the binding between your models and your views.
 
-### Rule: Use the existing navigation item object
+### Use the existing navigation item object
 
 Every instance of a UIViewController has a `navigationItem` property which should be used to specify the left and
 right navigation buttons and the title view. You should *not* create a `UINavigationItem` object because the
@@ -86,14 +86,14 @@ self.navigationItem.rightBarButtonItem = doneButton;
 Debugging
 ---------
 
-### Rule: Use lldb for debugging
+### Use lldb for debugging
 
 lldb allows you to inspect properties on classes that don't have explicit ivars declared in the object's interface.
 
 To use lldb, select "Edit Scheme..." from the "Product" menu (or press Cmd+Shift+<). Select the "Run" tab
 on the left-hand side of the scheme editor. Change the debugger drop down to "LLDB".
 
-### Rule: Use NSZombieEnabled to find object leaks
+### Use NSZombieEnabled to find object leaks
 
 When [NSZombieEnabled](http://cocoadev.com/wiki/NSZombieEnabled) is enabled, objects that are released from memory
 will be kept around as "zombies". If you attempt to access the released object again in the future, rather than
