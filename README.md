@@ -17,6 +17,9 @@ Table of Contents
   * [Use data source protocols to strongly separate data from views](#rule-use-data-source-protocols-to-strongly-separate-data-from-views)
 - [UIViewController](#uiviewcontroller)
   * [Use the existing navigation item object](#rule-use-the-existing-navigation-item-object)
+- [Debugging](#debugging)
+  * [Use lldb for debugging](#rule-use-lldb-for-debugging)
+  * [Use NSZombieEnabled to find object leaks](#rule-use-nszombieenabled-to-find-object-leaks)
 
 Be Mindful of the Lifetime of Views
 -----------------------------------
