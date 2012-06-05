@@ -83,6 +83,47 @@ access `self.navigationItem` and set its properties accordingly.
 self.navigationItem.rightBarButtonItem = doneButton;
 ```
 
+NSObject
+--------
+
+### Only expose public properties and methods in headers
+
+Objective-c allows you to define private properties in a category interface within your `.m` files; take
+advantage of this fact to provide better headers.
+
+This is equivalent to defining ivars as `@private` with the added benefit of changes not causing build propagation
+when modifications are made to the internal structure of an object. This can be particularly helpful if an object
+is being refactored in a fairly large project.
+
+#### Example
+
+**ViewController.h**
+
+```obj-c
+@interface ViewController : UIViewController
+@property (nonatomic, readonly, assign) NSInteger objectId;
+@end
+```
+
+**ViewController.m**
+
+```obj-c
+#import "ViewController.h"
+
+@interface ViewController()
+@property (nonatomic, readwrite, assign) NSInteger objectId;
+@property (nonatomic, readwrite, retain) UILabel* objectLabel;
+@end
+
+@implementation ViewController
+@synthesize objectId;
+@synthesize objectLabel;
+
+...
+
+@end
+```
+
 Debugging
 ---------
 
