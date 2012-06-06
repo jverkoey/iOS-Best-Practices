@@ -147,4 +147,4 @@ incredibly helpful in determining where memory leaks are occurring.
 
 To turn on NSZombieEnabled, select "Edit Scheme..." from the "Product" menu (or press Cmd+Shift+<). Select the "Run" tab
 on the left-hand side of the scheme editor. Select the "Arguments" tab in that page. Add a new Environment Variable
-and call it `NSZombieEnabled`. Set its value to `YES`.
+and call it `NSZombieEnabled`. Set its value to `YES`.  Be sure to disable this option before releasing your application.
