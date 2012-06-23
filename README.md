@@ -148,3 +148,19 @@ incredibly helpful in determining where memory leaks are occurring.
 To turn on NSZombieEnabled, select "Edit Scheme..." from the "Product" menu (or press Cmd+Shift+<). Select the "Run" tab
 on the left-hand side of the scheme editor. Select the "Arguments" tab in that page. Add a new Environment Variable
 and call it `NSZombieEnabled`. Set its value to `YES`.
+
+Documentation
+-------------
+
+### Protocols
+
+- For required methods, start the preamble with "Tells" and end it with "(required)"
+
+Example:
+> Tells the data source to return the number of rows in a given section of a table view. (required)
+
+- For optional methods, start the documentation with "Asks".
+
+Example:
+> Asks the data source to return the number of pages in the launcher view.
+
