@@ -154,15 +154,16 @@ Documentation
 
 ### Data Source Protocols
 
-For required methods, start the preamble with "Tells" and end it with "(required)". For example:
+For required methods, start the preamble with "Tells the data source" and end it with "(required)". For example:
 > Tells the data source to return the number of rows in a given section of a table view. (required)
 
-For optional methods, start the documentation with "Asks". For example:
+For optional methods, start the documentation with "Asks the data source". For example:
 > Asks the data source to return the number of pages in the launcher view.
 
 ### Delegate Protocols
 
-For methods that simply notify the delegate that an action has occurred, start the preamble with "Informs". For example:
+For methods that simply notify the delegate that an action has occurred, start the preamble with "Informs the delegate".
+For example:
 > Informs the delegate that the specified item on the specified page has been selected.
 
 
