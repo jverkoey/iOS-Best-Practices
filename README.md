@@ -21,7 +21,8 @@ Table of Contents
   * [Only expose public properties and methods in headers](#only-expose-public-properties-and-methods-in-headers)
 - [Debugging](#debugging)
   * [Use lldb for debugging](#use-lldb-for-debugging)
-  * [Use NSZombieEnabled to find object leaks](#use-nszombieenabled-to-find-object-leaks)
+  * [Use NSZombieEnabled to find object leaks](#use-nszombieenabled-to-find-  object-leaks)
+  * [Use Exception Breakpoint](#use-exception-breakpoint)
 
 Be Mindful of the Lifetime of Views
 -----------------------------------
@@ -148,6 +149,12 @@ incredibly helpful in determining where memory leaks are occurring.
 To turn on NSZombieEnabled, select "Edit Scheme..." from the "Product" menu (or press Cmd+Shift+<). Select the "Run" tab
 on the left-hand side of the scheme editor. Select the "Arguments" tab in that page. Add a new Environment Variable
 and call it `NSZombieEnabled`. Set its value to `YES`.
+
+### Use Exception Breakpoint
+
+Adding an Exception breakpoint break the execution where the exception is thrown. This enable you to inspect the call stack that lead to the exception and the variable value. 
+
+To enable the Exception breakpoint, in the navigator area select the Breakpoint Navigation. Click on the + button on the bottom of the area and select "Add Exception Breakpoint…".
 
 Documentation
 -------------
